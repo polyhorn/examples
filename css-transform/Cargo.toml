@@ -8,7 +8,9 @@ publish = false
 crate-type = ["staticlib"]
 
 [dependencies]
-polyhorn = { version = "0.3.1" }
+tokio = { version = "0.3.0", features = ["time"] }
+polyhorn = "0.3.2"
+yoyo = "0.3.2"
 
 [build-dependencies]
 polyhorn-build = "0.3.1"
