@@ -1,0 +1,11 @@
+[app]
+name = "Css Transform"
+version = "1.0"
+
+[app.ios]
+bundle-identifier = "com.example.CssTransform"
+
+[app.android]
+package = "com.example.css_transform"
+version-code = 1
+library = "css_transform"
