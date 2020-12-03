@@ -1,0 +1,11 @@
+[app]
+name = "Image Bytes Png"
+version = "1.0"
+
+[app.ios]
+bundle-identifier = "com.example.ImageBytesPng"
+
+[app.android]
+package = "com.example.image_bytes_png"
+version-code = 1
+library = "image_bytes_png"
