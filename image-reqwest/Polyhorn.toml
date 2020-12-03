@@ -1,0 +1,11 @@
+[app]
+name = "Image Reqwest"
+version = "1.0"
+
+[app.ios]
+bundle-identifier = "com.example.ImageReqwest"
+
+[app.android]
+package = "com.example.image_reqwest"
+version-code = 1
+library = "image_reqwest"
