@@ -1,0 +1,11 @@
+[app]
+name = "Image Placeholders"
+version = "1.0"
+
+[app.ios]
+bundle-identifier = "com.example.ImagePlaceholders"
+
+[app.android]
+package = "com.example.image_placeholders"
+version-code = 1
+library = "image_placeholders"

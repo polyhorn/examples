@@ -1,0 +1,12 @@
+[package]
+name = "image-placeholders"
+version = "1.0.0"
+edition = "2018"
+publish = false
+
+[lib]
+crate-type = ["staticlib"]
+
+[dependencies]
+tokio = { version = "0.2.5", features = ["time"] }
+polyhorn = "0.4.1"
