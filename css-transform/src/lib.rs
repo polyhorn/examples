@@ -1,10 +1,10 @@
-use polyhorn::assets::ImageSource;
 use polyhorn::prelude::*;
 use std::time::Duration;
-use tokio::time::sleep;
+use tokio::time::delay_for;
 use yoyo::components::View as YoyoView;
 use yoyo::yoyo;
 
+#[derive(Default)]
 pub struct App {}
 
 yoyo!(States, {
@@ -23,7 +23,7 @@ impl Component for App {
     fn render(&self, manager: &mut Manager) -> Element {
         let flip = use_state!(manager, false);
 
-        let state = match &*flip.get(manager) {
+        let state = match *flip.get(manager) {
             false => States::Initial,
             true => States::Flip,
         };
@@ -34,27 +34,27 @@ impl Component for App {
             let mut value = false;
 
             loop {
-                sleep(Duration::from_millis(1000)).await;
+                delay_for(Duration::from_millis(1000)).await;
                 value = !value;
                 weak_flip.replace(value);
             }
         });
 
-        poly!(<Window ...>
-            <View style={ style! {
+        poly!(<Window>
+            <View style=!{
                 align-items: center;
                 justify-content: center;
                 background-color: lightslategrey;
                 height: 100%;
-            } } ...>
-                <YoyoView::<States> variant=state style={ style! {
+            }>
+                <YoyoView::<States> variant=state style=!{
                     align-items: center;
                     justify-content: center;
                     padding: 32px;
                     background-color: aliceblue;
                     border-radius: 4px;
-                } } ...>
-                    <Image source={ ImageSource::Asset(asset!("emoji-polyhorn")) } ... />
+                }>
+                    <Image source=asset!("emoji-polyhorn") />
                 </YoyoView::<States>>
             </View>
         </Window>)

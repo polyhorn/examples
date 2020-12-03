@@ -4,13 +4,10 @@ version = "1.0.0"
 edition = "2018"
 publish = false
 
-[lib]
-crate-type = ["staticlib"]
-
 [dependencies]
-tokio = { version = "0.3.0", features = ["time"] }
-polyhorn = "0.3.2"
-yoyo = "0.3.2"
+tokio = { version = "0.2.5", features = ["time"] }
+polyhorn = "0.4.1"
+yoyo = "0.4.1"
 
 [build-dependencies]
-polyhorn-build = "0.3.1"
+polyhorn-build = "0.4.0"
